@@ -1,14 +1,13 @@
-# loginpress-security-exention
 I started by exploring the current codebase to understand how settings are stored. All settings are saved in the WordPress database using the loginpress_setting option in wp_options.
 
 My first goal was to add a new React UI component. Since there was no pre-defined slot for this, I inspected the existing code and injected the component into loginpress-extend-security-settings, ensuring it loaded correctly.
 
 The next objective was to save the data without creating a separate API request. I leveraged apiFetch.use((options, next) => …) for both GET and POST requests, appending the new settings to the existing API workflow, which allowed seamless saving and retrieval without additional network calls.
 
-Once the settings were saved in the database, I created a new backend class in the includes folder to handle password validation. This class hooks into validate_password_reset and tracks the last six password hashes. It returns an error if a user tries to reuse a recent password. I have tested this on the profile page, though not yet on the password reset page, as I am working locally and do not have access to the live FTP.
+Once the settings were saved in the database, I created a new backend class in the includes folder to handle password validation. This class hooks into validate_password_reset and tracks the last six password hashes. It returns an error if a user tries to reuse a recent password. I have tested this on the profile page, though not yet on the password reset page, as I am working locally and do not have access to the live SMTP.
 
 The next planned task is to implement email reminders using a WordPress cron job. This will send notifications based on the configured settings, such as whether the feature is enabled and the number of days between reminders, using the wp_mail() function.
 
-I have also considered code standards and localization. While I have added comments and followed PSR standards where possible, the localization files (.pot) have not yet been created, which can be done as a next step.
+I have also considered code standards and localization. While I have added comments and followed PSR standards where possible, the localization files (.pot) have not yet been created, which can also be done.
 
 Also Email work i have tested. 

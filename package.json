@@ -1,0 +1,25 @@
+{
+  "name": "wp-loginpres-security-extension",
+  "version": "1.0.0",
+  "description": "React admin app for LoginPress extension",
+  "author": "Your Name",
+  "license": "GPL-2.0-or-later",
+
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build",
+    "format": "wp-scripts format",
+    "lint:js": "wp-scripts lint-js"
+  },
+
+  "devDependencies": {
+    "@wordpress/scripts": "^26.0.0"
+  },
+
+  "dependencies": {
+    "@wordpress/element": "^4.0.0",
+    "@wordpress/components": "^25.0.0",
+    "@wordpress/i18n": "^4.0.0",
+    "@wordpress/api-fetch": "^6.0.0"
+  }
+}
